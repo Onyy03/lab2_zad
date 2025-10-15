@@ -1,3 +1,6 @@
+const _ = require('lodash');
+
+
 const user = {
     name: 'Imie',
     surname: 'Nazwisko',
@@ -36,3 +39,12 @@ function printUserWeightedAverage(user) {
 }
 
 printUserWeightedAverage(user);
+
+
+const subjectWithWeight1 = _.find(user.allGrades, { weight: 1 });
+
+if (subjectWithWeight1) {
+    console.log(`Przedmiot z wagą 1: ${subjectWithWeight1.subjectName}`);
+} else {
+    console.log('Nie znaleziono przedmiotu z wagą 1');
+}
